@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<the49:BottomSheet xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                   xmlns:the49="https://schemas.the49.com/dotnet/2023/maui"
+                   x:Class="ecommerce_app.View.Popups.Popup_trocar_senha"
+                   HasBackdrop="True" CornerRadius="25" BackgroundColor="White">
+
+    <the49:BottomSheet.Detents>
+        <the49:DetentsCollection/>
+    </the49:BottomSheet.Detents>
+    
+    <StackLayout>
+        <StackLayout Padding="30,0" Spacing="15">
+            <StackLayout>
+                <Image Source="minus.png" WidthRequest="200" HeightRequest="50" Margin="0,-10,0,0" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand"/>
+            </StackLayout>
+
+            <StackLayout Spacing="5">
+                <Label Text="Nova Senha"  Margin="5,0,0,0" FontFamily="Metropolis Medium"/>
+                <Frame Padding="10,2" CornerRadius="15" BorderColor="{StaticResource Primary}">
+                    <Entry Text="{Binding Nova_senha}" IsPassword="true" Placeholder="Digite a nova Senha" FontFamily="Metropolis Regular" PlaceholderColor="Gray"/>
+                </Frame>
+            </StackLayout>
+
+            <StackLayout Spacing="5" >
+                <Label Text="Confirmar a nova senha" Margin="5,0,0,0" FontFamily="Metropolis Medium"/>
+                <Frame Padding="10,2" CornerRadius="15" BorderColor="{StaticResource Primary}">
+                    <Entry Text="{Binding Confirmar_nova_senha}" IsPassword="True" Placeholder="Confirme a nova senha" PlaceholderColor="Gray" FontFamily="Metropolis Regular"/>
+                </Frame>
+            </StackLayout>
+
+            <Button Text="Trocar senha" Command="{Binding Trocar_senhaCommand}"/>
+        </StackLayout>
+    </StackLayout>
+</the49:BottomSheet>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:ecommerce_app.ViewModel"
+             x:Class="ecommerce_app.View.Page_login"
+             Title="Page_login">
+
+    <ContentPage.BindingContext>
+        <viewmodel:Page_loginViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <StackLayout Padding="30,15" Spacing="15">
+            <StackLayout>
+                <Label HorizontalOptions="Center" Margin="0,25,0,0" >
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="E-Commerce " FontSize="Large" FontFamily="Metropolis Medium" />
+                            <Span Text="App" TextColor="{StaticResource Primary}" FontSize="26" FontAttributes="Bold" FontFamily="Metropolis Medium"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+
+            <StackLayout Spacing="10" Margin="0,50,0,0">
+                <StackLayout Spacing="5">
+                    <Label Text="Email ou Número de Telefone" Margin="5,0,0,0" FontFamily="Metropolis Medium"/>
+                    <Frame Padding="10,2" CornerRadius="15" BorderColor="{StaticResource Primary}">
+                        <Entry Text="{Binding Entrada}" Placeholder="Insira o seu email ou número de telefone" PlaceholderColor="Gray" Keyboard="Email" FontFamily="Metropolis Regular"/>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Spacing="5">
+                    <Label Text="Senha" Margin="5,0,0,0" FontFamily="Metropolis Medium"/>
+                    <Frame Padding="10,2" CornerRadius="15" BorderColor="{StaticResource Primary}">
+                        <Entry Text="{Binding Senha}" Placeholder="Insira a sua senha" PlaceholderColor="Gray" IsPassword="True" FontFamily="Metropolis Regular"/>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" >
+                    <StackLayout Orientation="Horizontal" Margin="-10,0,0,0">
+                        <CheckBox VerticalOptions="Center" IsChecked="{Binding RememberMe}"/>
+                        <Label Text="Lembrar de mim" VerticalOptions="Center" FontFamily="Metropolis Medium"/>
+                    </StackLayout>
+
+                    <StackLayout HorizontalOptions="EndAndExpand" VerticalOptions="Center">
+                        <Label Text="Esqueceu sua senha?" TextColor="{StaticResource Primary}" FontFamily="Metropolis Medium">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Recuperar_senhaCommand}"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout>
+                    <Button Text="Logar" FontFamily="Metropolis Medium" FontSize="Subtitle" CornerRadius="15" Command="{Binding LogarCommand}"/>
+                </StackLayout>
+
+                <StackLayout Margin="0,10" Spacing="10">
+                    <Grid ColumnDefinitions="*,auto,*" ColumnSpacing="8" Margin="0,10">
+                        <BoxView Color="Gray" HeightRequest="1"/>
+                        <Label Text="Ou Continuar com" Grid.Column="1"/>
+                        <BoxView Color="Gray" HeightRequest="1" Grid.Column="2"/>
+                    </Grid>
+
+                    <Frame Padding="0,9">
+                        <Grid ColumnDefinitions="25,*" Padding="20,0,0,0">
+                            <Image Source="google.png"/>
+                            <Label Text="Entrar com o Google" Grid.ColumnSpan="2" HorizontalTextAlignment="Center" FontFamily="Metropolis Medium" TextColor="Black" FontSize="Subtitle" />
+                        </Grid>
+                    </Frame>
+
+                    <Frame Padding="0,9" BackgroundColor="#1877f2">
+                        <Grid ColumnDefinitions="25,*" Padding="20,0,0,0">
+                            <Image Source="facebook.png"/>
+                            <Label Text="Entrar com o Facebook" Grid.ColumnSpan="2" HorizontalTextAlignment="Center" FontFamily="Metropolis Medium" TextColor="White" FontSize="Subtitle" />
+                        </Grid>
+                    </Frame>
+
+                    <Frame Padding="0,9" BackgroundColor="Black" BorderColor="Transparent">
+                        <Grid ColumnDefinitions="25,*" Padding="20,0,0,0">
+                            <Image Source="apple.png" Aspect="AspectFill"/>
+                            <Label Text="Entrar com a Apple" Grid.ColumnSpan="2" HorizontalTextAlignment="Center" FontFamily="Metropolis Medium" TextColor="White" FontSize="Subtitle" />
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
+                    <Label Text="Não tem uma conta?  "/>
+                    <Frame Padding="0" BorderColor="Transparent">
+                        <Label Text="Criar Conta" TextColor="Blue" VerticalOptions="Center">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding CadastrarCommand}" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+
+        <BoxView Color="Black" Opacity="0.7" IsVisible="{Binding IsVisible}"/>
+        <ActivityIndicator Color="White" IsVisible="{Binding IsVisible}" IsRunning="{Binding IsVisible}" Scale="0.15"/>
+    </Grid>
+    
+</ContentPage>

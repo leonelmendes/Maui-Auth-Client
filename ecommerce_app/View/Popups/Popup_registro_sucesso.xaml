@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<the49:BottomSheet xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                   xmlns:the49="https://schemas.the49.com/dotnet/2023/maui"
+                   x:Class="ecommerce_app.View.Popups.Popup_registro_sucesso"
+                   HasBackdrop="True" IsCancelable="False" CornerRadius="25" BackgroundColor="White">
+    <the49:BottomSheet.Detents>
+        <the49:MediumDetent/>
+    </the49:BottomSheet.Detents>
+
+    <StackLayout>
+        <StackLayout Padding="30,2" Spacing="15">
+            <StackLayout>
+                <Image Source="minus.png" WidthRequest="200" HeightRequest="50" Margin="0,-10,0,0" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+
+            <StackLayout Spacing="5" Margin="0,-20,0,0">
+                <Frame BackgroundColor="#E6FAEF" BorderColor="Transparent" CornerRadius="125" HeightRequest="150" WidthRequest="150">
+                    <Frame BackgroundColor="#00D261" BorderColor="Transparent" CornerRadius="125" Padding="30">
+                        <Image Source="sucesso.png"/>
+                    </Frame>
+                </Frame>
+
+                <StackLayout Spacing="5" Margin="0,10,0,0" >
+                    <Label Text="Cadastrado com sucesso!" HorizontalOptions="Center" FontSize="Medium" FontAttributes="Bold" FontFamily="Metropolis Medium"/>
+                    <Label Text="Parabéns! Sua conta foi criada." HorizontalOptions="Center" FontFamily="Metropolis Regular" TextColor="DarkGray" Margin="0,5,0,0"/>
+                    <Label Text="Faça login para ter uma experiência incrível." HorizontalOptions="Center" TextColor="DarkGray" FontFamily="Metropolis Regular"/>
+                </StackLayout>
+            </StackLayout>
+
+            <Button Text="Ir para a página principal" FontFamily="Metropolis Medium" FontSize="Subtitle" CornerRadius="15" Margin="0,30,0,0" Command="{Binding Voltar_loginCommand}"/>
+
+        </StackLayout>
+    </StackLayout>
+</the49:BottomSheet>

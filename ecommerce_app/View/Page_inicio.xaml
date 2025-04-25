@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:ecommerce_app.ViewModel"
+             xmlns:controls="clr-namespace:ecommerce_app.Controls"
+             x:Class="ecommerce_app.View.Page_inicio"
+             Title="Page_inicio">
+
+    <ContentPage.BindingContext>
+        <viewmodel:Page_inicioViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <controls:Label_convert_text_truncate x:Key="TruncateTextConverter" MaxLength="10" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout Padding="30,15" Spacing="15">
+
+        <StackLayout >
+            <HorizontalStackLayout>
+                <Frame Padding="0" CornerRadius="125" IsClippedToBounds="True" BorderColor="Transparent">
+                    <Image Source="perfil.png" Aspect="AspectFit" WidthRequest="40" HeightRequest="40"/>
+                </Frame>
+
+                <StackLayout Margin="10,0,0,0">
+                    <Label >
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Hi, " FontSize="17" FontFamily="Metropolis Medium"/>
+                                <Span Text="{Binding _Usuario.Nome, Converter={StaticResource TruncateTextConverter}}" FontSize="17" FontFamily="Metropolis Medium"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Label Text="Let's go Shopping" FontSize="13"/>
+                </StackLayout>
+            </HorizontalStackLayout>
+        </StackLayout>
+
+        <StackLayout Spacing="10">
+            <CarouselView ItemsSource="{Binding Promocional}" IndicatorView="indicator_promocional" HeightRequest="200">  
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout >
+                            <Frame Padding="1" BorderColor="Transparent" CornerRadius="25">
+                                <Image Source="{Binding Url_imagem}" Aspect="Center"/>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+
+            <StackLayout>
+                <IndicatorView x:Name="indicator_promocional" IndicatorColor="{StaticResource Secondary}" SelectedIndicatorColor="{StaticResource Primary}" HorizontalOptions="Center"/>
+            </StackLayout>
+        </StackLayout>
+
+        <Button Text="Logout" CornerRadius="25" Command="{Binding LogoutCommand}"/>
+
+
+
+    </StackLayout>
+    
+</ContentPage>

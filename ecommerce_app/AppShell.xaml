@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="ecommerce_app.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ecommerce_app.View"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarBackgroundColor="Blue"
+    Shell.TabBarForegroundColor="Red"
+    Shell.TabBarUnselectedColor="Green"
+    Shell.FlyoutBehavior="Disabled"
+    x:Name="My_Shell">
+
+    <FlyoutItem x:Name="MyPage_introducao" Route="Page_introducao">
+        <ShellContent ContentTemplate="{DataTemplate local:Page_introducao}" Route="Page_introducao" />
+    </FlyoutItem>
+
+    <FlyoutItem x:Name="MyPage_login" Route="Pagina_login">
+        <ShellContent ContentTemplate="{DataTemplate local:Page_login}" Route="Page_login"/>
+    </FlyoutItem>
+
+    <TabBar x:Name="TabBar_inicio">
+        <Tab Title="Início" Icon="inicio.png">
+            <ShellContent ContentTemplate="{DataTemplate local:Page_inicio}"
+                          Route="Page_inicio"/>
+        </Tab>
+        <Tab Title="Encomenda" Icon="encomenda.png">
+            <ShellContent ContentTemplate="{DataTemplate local:Page_encomenda}"
+                          Route="Page_encomenda"/>
+        </Tab>
+        <Tab Title="Pesquisar" Icon="pesquisar.png">
+            <ShellContent ContentTemplate="{DataTemplate local:Page_pesquisar}"
+                          Route="Page_pesquisar"/>
+        </Tab>
+        <Tab Title="Perfil" Icon="perfil.png">
+            <ShellContent ContentTemplate="{DataTemplate local:Page_perfil}"
+                          Route="Page_perfil"/>
+        </Tab>
+    </TabBar>
+
+
+</Shell>

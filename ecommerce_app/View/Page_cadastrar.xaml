@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:ecommerce_app.ViewModel"
+             xmlns:controls="clr-namespace:ecommerce_app.Controls"
+             x:Class="ecommerce_app.View.Page_cadastrar"
+             Title="Page_cadastrar">
+
+    <ContentPage.BindingContext>
+        <viewmodel:Page_cadastrarViewModel/>
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <StackLayout Padding="30,15" Spacing="15">
+            <StackLayout >
+                <Image Source="back.png" WidthRequest="20" HorizontalOptions="Start">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding BackCommand}"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label HorizontalOptions="Center" Margin="0,5,0,0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="E-Commerce " FontSize="Large" FontFamily="Metropolis Medium" />
+                            <Span Text="App" TextColor="{StaticResource Primary}" FontSize="26" FontAttributes="Bold" FontFamily="Metropolis Medium"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+
+            <StackLayout Spacing="10" Margin="0,50,0,0">
+                <StackLayout Spacing="5">
+                    <Label Text="Nome Completo" Margin="5,0,0,0" FontFamily="Metropolis Medium"/>
+                    <Frame Padding="10,2" CornerRadius="15" BorderColor="{StaticResource Primary}">
+                        <Entry Text="{Binding NomeCompleto}" Placeholder="Insira o seu Nome Completo" PlaceholderColor="Gray" FontFamily="Metropolis Regular"/>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Spacing="5">
+                    <Label Text="Email" Margin="5,0,0,0" FontFamily="Metropolis Medium"/>
+                    <Frame Padding="10,2" CornerRadius="15" BorderColor="{StaticResource Primary}">
+                        <Entry Text="{Binding Email}" Placeholder="Insira o seu Email" PlaceholderColor="Gray" Keyboard="Email" FontFamily="Metropolis Regular"/>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Spacing="5">
+                    <Label Text="Número de Telefone" Margin="5,0,0,0" FontFamily="Metropolis Medium"/>
+                    <Grid ColumnDefinitions="60,*" ColumnSpacing="5">
+                        <Frame Padding="10,2" CornerRadius="15" BorderColor="{StaticResource Primary}">
+                            <controls:Picker_indicator_country Title="Escolha o indicativo"/>
+                        </Frame>
+                        <Frame Grid.Column="1" Padding="10,2" CornerRadius="15" BorderColor="{StaticResource Primary}">
+                            <Entry Text="{Binding Telefone}" Placeholder="Insira o seu Número de Telefone" Keyboard="Numeric" PlaceholderColor="Gray" MaxLength="9" FontFamily="Metropolis Regular"/>
+                        </Frame>
+                    </Grid>
+                </StackLayout>
+
+                <StackLayout Spacing="5">
+                    <Label Text="Senha" Margin="5,0,0,0" FontFamily="Metropolis Medium"/>
+                    <Frame Padding="10,2" CornerRadius="15" BorderColor="{StaticResource Primary}">
+                        <Entry Text="{Binding Senha}" Placeholder="Insira a sua Senha" PlaceholderColor="Gray" FontFamily="Metropolis Regular" IsPassword="True"/>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout>
+                <Button Text="Criar Conta" FontFamily="Metropolis Medium" FontSize="Subtitle" CornerRadius="15" Command="{Binding Verificar_CadastroCommand}"/>
+            </StackLayout>
+
+            <StackLayout Margin="0,10" Spacing="10">
+                <Grid ColumnDefinitions="*,auto,*" ColumnSpacing="8" Margin="0,10">
+                    <BoxView Color="Gray" HeightRequest="1"/>
+                    <Label Text="Ou usar outro metódo" Grid.Column="1"/>
+                    <BoxView Color="Gray" HeightRequest="1" Grid.Column="2"/>
+                </Grid>
+
+                <Frame Padding="0,9">
+                    <Grid ColumnDefinitions="25,*" Padding="20,0,0,0">
+                        <Image Source="google.png"/>
+                        <Label Text="Cadastrar com o Google" Grid.ColumnSpan="2" HorizontalTextAlignment="Center" FontFamily="Metropolis Medium" TextColor="Black" FontSize="Subtitle" />
+                    </Grid>
+                </Frame>
+
+                <Frame Padding="0,9" BackgroundColor="#1877f2">
+                    <Grid ColumnDefinitions="25,*" Padding="20,0,0,0">
+                        <Image Source="facebook.png"/>
+                        <Label Text="Cadastrar com o Facebook" Grid.ColumnSpan="2" HorizontalTextAlignment="Center" FontFamily="Metropolis Medium" TextColor="White" FontSize="Subtitle" />
+                    </Grid>
+                </Frame>
+
+                <Frame Padding="0,9" BackgroundColor="Black" BorderColor="Transparent">
+                    <Grid ColumnDefinitions="25,*" Padding="20,0,0,0">
+                        <Image Source="apple.png" Aspect="AspectFill"/>
+                        <Label Text="Cadastrar com a Apple" Grid.ColumnSpan="2" HorizontalTextAlignment="Center" FontFamily="Metropolis Medium" TextColor="White" FontSize="Subtitle" />
+                    </Grid>
+                </Frame>
+            </StackLayout>
+        </StackLayout>
+
+        <BoxView Color="Black" Opacity="0.5" IsVisible="{Binding IsVisible}"/>
+        <ActivityIndicator Color="White" IsVisible="{Binding IsVisible}" IsRunning="{Binding IsVisible}" Scale="0.15"/>
+    </Grid>
+    
+</ContentPage>

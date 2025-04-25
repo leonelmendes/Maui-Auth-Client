@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:ecommerce_app.ViewModel"
+             x:Class="ecommerce_app.View.Page_verificar_cadastro"
+             Title="Page_verificar_cadastro">
+
+    <ContentPage.BindingContext>
+        <viewmodels:Page_verificar_cadastroViewModel/>
+    </ContentPage.BindingContext>
+
+    <StackLayout Padding="30,15" Spacing="15">
+        <StackLayout >
+            <Image Source="back.png" WidthRequest="20" HorizontalOptions="Start">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding BackCommand}"/>
+                </Image.GestureRecognizers>
+            </Image>
+            <Label HorizontalOptions="Center" Margin="0,5,0,0">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="E-Commerce " FontSize="Large" FontFamily="Metropolis Medium" />
+                        <Span Text="App" TextColor="{StaticResource Primary}" FontSize="26" FontAttributes="Bold" FontFamily="Metropolis Medium"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+
+        <StackLayout Spacing="5" Margin="0,50,0,0">
+            <Frame BackgroundColor="{StaticResource Secondary}" BorderColor="Transparent" CornerRadius="125" HeightRequest="150" WidthRequest="150">
+                <Frame BackgroundColor="{StaticResource Primary}" BorderColor="Transparent" CornerRadius="125" Padding="30">
+                    <Image Source="verificar_cadastro.png"/>
+                </Frame>
+            </Frame>
+
+            <StackLayout Spacing="5" Margin="0,20,0,0" >
+                <Label Text="Código de Verificação" HorizontalOptions="Center" FontSize="Medium" FontAttributes="Bold" FontFamily="Metropolis Medium"/>
+                <Label Text="Enviamos um código de verificação para o email" HorizontalOptions="Center" FontFamily="Metropolis Regular" TextColor="DarkGray" Margin="0,5,0,0"/>
+                <Label Text="{Binding _Usuario.Email}" HorizontalOptions="Center" FontFamily="Metropolis Regular" FontAttributes="Bold"/>
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="5">
+                <Frame Padding="2,8" CornerRadius="15" BorderColor="LightGray">
+                    <Entry Text="{Binding Codigo1}" x:Name="entry1" HorizontalTextAlignment="Center" TextChanged="Mudar_foco1" FontSize="Large" FontAttributes="Bold" FontFamily="Metropolis Medium" MaxLength="1" Keyboard="Numeric"/>
+                </Frame>
+
+                <Frame Padding="2,10" CornerRadius="15" BorderColor="LightGray" >
+                    <Entry Text="{Binding Codigo2}" x:Name="entry2" HorizontalTextAlignment="Center" TextChanged="Mudar_foco2" FontSize="Large" FontAttributes="Bold" FontFamily="Metropolis Medium" MaxLength="1" Keyboard="Numeric"/>
+                </Frame>
+
+                <Frame Padding="2,10" CornerRadius="15" BorderColor="LightGray">
+                    <Entry Text="{Binding Codigo3}" x:Name="entry3" HorizontalTextAlignment="Center" TextChanged="Mudar_foco3" FontSize="Large" FontAttributes="Bold" FontFamily="Metropolis Medium" MaxLength="1" Keyboard="Numeric"/>
+                </Frame>
+
+                <Frame Padding="2,10" CornerRadius="15" BorderColor="LightGray">
+                    <Entry Text="{Binding Codigo4}" x:Name="entry4" HorizontalTextAlignment="Center" TextChanged="Mudar_foco4" FontSize="Large" FontAttributes="Bold" FontFamily="Metropolis Medium" MaxLength="1" Keyboard="Numeric"/>
+                </Frame>
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout Spacing="5" Margin="0,20,0,0">
+            <Button x:Name="btn_confirmar" Text="Confirmar" FontFamily="Metropolis Medium" FontSize="Subtitle" CornerRadius="15" Command="{Binding VerificarCadastro}"/>
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" >
+                <Label Text="Não recebeu o código?  "/>
+                <Frame Padding="0" BorderColor="Transparent">
+                    <Label Text="Reenviar" TextColor="Blue" VerticalOptions="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Frame>
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

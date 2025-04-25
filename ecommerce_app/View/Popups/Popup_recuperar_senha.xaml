@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<the49:BottomSheet xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                   xmlns:the49="https://schemas.the49.com/dotnet/2023/maui"
+                   x:Class="ecommerce_app.View.Popups.Popup_recuperar_senha"
+                   HasBackdrop="True" CornerRadius="25" BackgroundColor="White">
+
+    <the49:BottomSheet.Detents>
+        <the49:DetentsCollection/>
+    </the49:BottomSheet.Detents>
+
+    <StackLayout>
+        <StackLayout Padding="30,0" Spacing="15">
+            <StackLayout>
+                <Image Source="minus.png" WidthRequest="200" HeightRequest="50" Margin="0,-10,0,0" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand"/>
+            </StackLayout>
+
+            <StackLayout Spacing="5">
+                <Label Text="Recuperar senha" HorizontalOptions="Start" FontSize="Medium" FontAttributes="Bold" FontFamily="Metropolis Medium"/>
+                <Label Text="Não se preocupe! Acontece. Por favor, insira o e-mail associado à sua conta." HorizontalOptions="Start" FontFamily="Metropolis Regular" TextColor="DarkGray" />
+            </StackLayout>
+
+            <StackLayout  Spacing="5" Margin="0,5,0,0">
+                <Label Text="Email ou Número de Telefone" Margin="5,0,0,0" FontFamily="Metropolis Medium"/>
+                <Frame Padding="10,2" CornerRadius="15" BorderColor="{StaticResource Primary}">
+                    <Entry Text="{Binding Email}" Placeholder="Insira o seu email ou número de telefone" PlaceholderColor="Gray" Keyboard="Email" FontFamily="Metropolis Regular"/>
+                </Frame>
+            </StackLayout>
+
+            <Button Text="Enviar código" FontFamily="Metropolis Medium" FontSize="Subtitle" CornerRadius="15" Margin="0,0,0,20" Command="{Binding Verificar_codeCommand}"/>
+
+        </StackLayout>
+    </StackLayout>
+</the49:BottomSheet>
