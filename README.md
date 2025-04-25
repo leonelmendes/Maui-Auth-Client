@@ -6,22 +6,22 @@
 
 ## 📝 **Sumário**
 
-- [📌 Introdução](#📌Introdução)
-- [✅ Funcionalidades](#funcionalidades)
-- [🔄 Fluxo de Login](#fluxo-de-login)
-- [🧰 Tecnologias Utilizadas](#tecnologias-utilizadas)
-- [▶️ Como Rodar](#como-rodar)
-- [🔗 Repositório da API](#repositório-da-api)
+- [Introdução](#Introdução)
+- [Funcionalidades](#funcionalidades)
+- [Fluxo de Login](#fluxo-de-login)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Como Rodar](#como-rodar)
+- [Repositório da API](#repositório-da-api)
 
 ---
 
-## **📌 Introdução**
+## **Introdução**
 
 **MauiAuthClient** é um aplicativo mobile desenvolvido com .NET MAUI que se conecta a uma API ASP.NET Core para realizar autenticação de usuários utilizando JWT. Este projeto é a base para um sistema completo de e-commerce, começando com toda a parte de autenticação e gerenciamento de conta.
 
 ---
 
-## **✅ Funcionalidades**
+## **Funcionalidades**
 
 - 🧾 Criação de conta
 - 🔐 Login e Logout
@@ -31,7 +31,7 @@
 
 ---
 
-## **🔄 Fluxo de Login**
+## **Fluxo de Login**
 
 1. O usuário faz o login com email e senha;
 2. Se as credenciais forem válidas, a API retorna um **token JWT**;
@@ -41,7 +41,7 @@
 
 ---
 
-## **🧰 Tecnologias Utilizadas**
+## **Tecnologias Utilizadas**
 
 - [.NET MAUI](https://learn.microsoft.com/en-us/dotnet/maui/)
 - C#
@@ -50,7 +50,7 @@
 
 ---
 
-## **▶️ Como Rodar**
+## **Como Rodar**
 
 1. Clone o repositório:
    ```bash
@@ -62,7 +62,7 @@
 
 -- 
 
-## **🔗 Repositório da API**
+## **Repositório da API**
 
 A API que este app consome está disponível neste repositório:
 
