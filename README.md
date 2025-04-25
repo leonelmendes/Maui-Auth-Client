@@ -1,11 +1,6 @@
 # 📱 MauiAuthClient
 
-
-![banner](https://user-images.githubusercontent.com/00000000/000000000-0000-0000-0000-000000000000.png)
-[![GitHub stars](https://img.shields.io/github/stars/seu-usuario/MauiAuthClient?style=social)](https://github.com/seu-usuario/MauiAuthClient)
-[![GitHub forks](https://img.shields.io/github/forks/seu-usuario/MauiAuthClient?style=social)](https://github.com/seu-usuario/MauiAuthClient)
 [![Platform](https://img.shields.io/badge/platform-.NET%20MAUI-blueviolet?logo=dotnet)](https://learn.microsoft.com/en-us/dotnet/maui/)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/seu-usuario/MauiAuthClient/blob/main/LICENSE)
 
 ---
 
